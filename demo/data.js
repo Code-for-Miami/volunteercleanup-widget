@@ -20,4 +20,4 @@ const events = [
     capacity_count: 0,
     is_private: false,
   },
-]:
+]
