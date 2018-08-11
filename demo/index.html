@@ -4,11 +4,72 @@
   <title>Widget Demo</title>
 </head>
 <body>
-  <div class="vc-events-widget"></div>
+  <div class="vc-events-widget">
+   <div class="event-container">
+     <h1 class="event-header">Upcoming Events</h1>
+      <div class="event">
+        <div class="event-body">
+          <div class="name">
+            Lorem ipsum dolor sit amet.
+          </div>
+          <div class="date">
+            August 31, 2018
+          </div>
+        </div>
+       <div class="event-link">
+         <a class="event-btn" href="#">
+           Join
+         </a>
+       </div>
+      </div>
+   </div>
+  </div>
 
+  <style scoped>
+    .vc-events-widget {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .event-header {
+      text-align: center;
+    }
+    .event-container {
+      min-width: 40%;
+    }
+    .event {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 15px;
+      border: 1px solid;
+    }
+    .event-body {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      align-self: center;
+    }
+    .event-body .name {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .event-link {
+
+    }
+    .event-btn {
+      color: white;
+      border: 1px solid black;
+      padding: 10px 30px;
+      margin: 10px;
+      float: right;
+      text-decoration: none;
+      background-color: forestgreen;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  </style>
   <script type="text/javascript">
-    // get events async
-      // 
+    // get events async //
   </script>
 
 </body>
