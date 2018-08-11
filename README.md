@@ -1,4 +1,4 @@
-# volunteercleanup-widget
+# volunteercleanup.org - Embedded Event Widget
 
 # Demo
 
