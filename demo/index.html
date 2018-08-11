@@ -2,14 +2,32 @@
 <html>
 <head>
   <title>Widget Demo</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div class="vc-events-widget"></div>
+  <div class="header row middle">
+    <div>
+      <h1>Logo</h1>
+    </div>
+    <div class="row">
+      <span class="nav-item">Home</span>
+      <span class="nav-item">About</span>
+      <span class="nav-item">Contact</span>
+    </div>
+  </div>
 
-  <script type="text/javascript">
-    // get events async
-      // 
-  </script>
+  <div class="hero row middle">
+    <p style="width: 200px;">(website content)</p>
+  </div>
+
+  <div id="vc-events-widget"></div>
+  <script type="text/javascript" src="https://s3.amazonaws.com/volunteercleanup-widget/widget.js"></script>
+
+  <style type="text/css">
+    #vc-events-widget {
+      min-height: 565px;
+    }
+  </style>
 
 </body>
 </html>
