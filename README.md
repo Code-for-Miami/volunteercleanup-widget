@@ -1,4 +1,4 @@
-# volunteercleanup-widget
+# volunteercleanup.org - Embedded Event Widget
 
 # Demo
 
@@ -16,7 +16,7 @@
 
 `<script type="text/javascript" src="https://s3.amazonaws.com/volunteercleanup-widget/widget.js"></script>`
 
-#Customization
+# Customization
 
 - Change the location where events are fetched
 
