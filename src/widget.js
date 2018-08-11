@@ -9,7 +9,21 @@
 
     const app = window.vcWidget;
     app.buildListItem = (vcEvent) => {
-      return `<p class="">${vcEvent.page_name}</p>`;
+      return `<div class="event">
+        <div class="event-body">
+          <div class="name">
+            ${vcEvent.page_name}
+          </div>
+          <div class="date">
+            ${vcEvent.start_at}
+          </div>
+        </div>
+       <div class="event-link">
+         <a class="event-btn" href="#">
+           Join
+         </a>
+       </div>
+      </div>`;
     };
 
     var xhr = new XMLHttpRequest();
@@ -24,8 +38,13 @@
       const htmlListOfEvents = events.map((vcEvent) => {
         return app.buildListItem(vcEvent);
       });
-
-      containerEl.innerHTML = htmlListOfEvents;
+      containerEl.innerHTML = ` <div class="event-container">
+                                   <h1 class="event-header">Upcoming Events</h1>
+                                   <div class="event-list">
+                                   </div>
+                                 </div>`;
+      containerEl.insertAdjacentHTML('afterbegin', `<link rel="stylesheet" href="https://s3.amazonaws.com/volunteercleanup-widget/styles.js">`);
+      document.querySelector('.event-list').innerHTML = htmlListOfEvents;
       app.loading = false;
     };
 

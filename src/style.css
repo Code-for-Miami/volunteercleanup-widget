@@ -1,0 +1,41 @@
+#vc-events-widget {
+  min-height: 565px;
+}
+.vc-events-widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.event-header {
+  text-align: center;
+}
+.event-container {
+  min-width: 40%;
+}
+.event {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
+  border: 1px solid;
+}
+.event-body {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  align-self: center;
+}
+.event-body .name {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.event-btn {
+  color: white;
+  border: 1px solid black;
+  padding: 10px 30px;
+  margin: 10px;
+  float: right;
+  text-decoration: none;
+  background-color: forestgreen;
+  font-weight: 600;
+  text-transform: uppercase;
+}
