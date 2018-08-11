@@ -1,0 +1,24 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.middle {
+  align-items: center;
+}
+
+.header {
+  height: 68px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.nav-item {
+  padding: 8px;
+}
+
+.hero {
+  height: 200px;
+  background: rgba(0,0,0,0.1);
+  text-align: center;
+}

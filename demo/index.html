@@ -2,14 +2,74 @@
 <html>
 <head>
   <title>Widget Demo</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div class="vc-events-widget"></div>
+  <div class="header row middle">
+    <div>
+      <h1>Logo</h1>
+    </div>
+    <div class="row">
+      <span class="nav-item">Home</span>
+      <span class="nav-item">About</span>
+      <span class="nav-item">Contact</span>
+    </div>
+  </div>
+
+  <div class="hero row middle">
+    <p style="width: 200px;">(website content)</p>
+  </div>
+
+  <div id="vc-events-widget"></div>
 
   <script type="text/javascript">
-    // get events async
-      // 
+    // const eventsEndpoint = 'api.com/events';
+    window.vcWidget = { loading: true, WIDGET_DOM_ID: 'vc-events-widget' };
+    const app = window.vcWidget;
+    app.buildListItem = (vcEvent) => {
+      return `<p class="">${vcEvent.page_name}</p>`;
+    };
+
+    // Fake API Call
+    setTimeout(function() {
+      const events = [{
+        page_name: 'North Beach Clean Up',
+        venue_name: 'North Beach Sandbowl',
+        venue_address_address1: '7275 Collins Ave',
+        venue_address_address2: '',
+        venue_address_city: 'Miami Beach',
+        venue_address_state: 'FL',
+        venue_address_zip: 33141,
+        venue_address_country_code: 'US',
+        created_at: '2017-06-23 08:38:18 -0400',
+        contact_name: 'diego caiola',
+        contact_phone_number: '7865065588',
+        contact_email: 'diego@crossmindedgroup.com',
+        start_at: '2017-07-05 10:00:00 -0400',
+        end_at: '2017-07-05 13:00:00 -0400',
+        time_zone: 'Eastern Time (US & Canada)',
+        ticket_price: 0,
+        attending_count: 8,
+        capacity_count: 0,
+        is_private: false,
+      }];
+
+      const containerEl = document.getElementById(app.WIDGET_DOM_ID);
+      if (!containerEl) { throw Error('You must add <div id="vc-events-widget"></div> to the page.'); }
+
+      const htmlListOfEvents = events.map((vcEvent) => {
+        return app.buildListItem(vcEvent);
+      });
+
+      containerEl.innerHTML = htmlListOfEvents;
+      app.loading = false;
+    }, 1200);
   </script>
+  <style type="text/css">
+    #vc-events-widget {
+      min-height: 565px;
+    }
+  </style>
 
 </body>
 </html>
