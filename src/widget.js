@@ -20,8 +20,9 @@
       const events = JSON.parse(data);
       const containerEl = document.getElementById(app.WIDGET_DOM_ID);
       if (!containerEl) { throw Error('You must add <div id="vc-events-widget"></div> to the page.'); }
-
-      const htmlListOfEvents = events.map((vcEvent) => {
+      if (!(events instanceof Array)) { throw Error('Data from endpoint is not an array'); }
+      
+      const htmlListOfEvents = events.slice(0,3).map((vcEvent, index) => {
         return app.buildListItem(vcEvent);
       });
 
